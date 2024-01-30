@@ -43,6 +43,15 @@ console.log(number.padEnd(6,"3"));
 //repeat
 console.log(name.repeat(4));
 
+//JavaScript String search
+//indexOf
+const text = "Please locate where 'locate' occurs!";
+console.log(text.indexOf("locate"));
+//last index of
+console.log(text.lastIndexOf("locate"));
+//search
+console.log(text.search("locate"));
+//match
 
 
 
@@ -53,4 +62,10 @@ console.log(name.repeat(4));
 
 
 
-    
+
+
+
+
+
+
+
