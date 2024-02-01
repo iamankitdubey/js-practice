@@ -38,7 +38,59 @@ const store = {
         storeNumber: 5,
         locationCity :"Milan",
         locationCountry :"Italy",
-        products: }
+        products: [banana, apple, candy]};
+    
+        console.log(store);
+        console.log(store.products);
+        console.log(store.products[2]);
+        store.products[0].price=1.75;
+        console.log(store);
+        console.log(banana);
+        store.candy=4.99;
+        console.log(store);
+        console.log(candy);
+
+//assignment 4
+const houseForSale={
+        area :940,
+        value : 320000,
+        streetName : "Fifth Street",
+        built :"2012",
+        owner : {name: "Blake", age: 29},
+        offers : [290000, 295000, 315000, 312000]
+}
+     console.log(houseForSale);
+     delete houseForSale['built']; 
+     console.log(houseForSale);
+     houseForSale.owner.age=30;
+     console.log(houseForSale);
+     const{offers}=houseForSale
+     let max=offers[0];
+     for(let a=0;a<offers.length;a++){
+    if(max<offers[a]){
+        max=offers[a]
+    }
+}
+     console.log(max);
+     houseForSale.salePrice=312000;
+     console.log(houseForSale);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
