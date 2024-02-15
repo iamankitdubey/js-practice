@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>invoice</title>
+    <style>
+        table{
+            border: 1px solid;
+            margin: 10px;
+        }
+        tr{
+            border: 1px solid;
+        }
+        th{
+            border: 1px solid;
+        }
+        td{
+            border: 1px solid;
+        }
+        button{
+        padding: 10px 18px;
+        border-radius: 5px;
+        border: 1px solid;
+        color: white;
+        background-color: rgb(122, 209, 246);
+     }
+     .table{
+        width:300px;
+        background-color: gray;
+     }
+    </style>
+</head>
+<body>
+    <div class="main">
+    
+        <button type = "button" value="addItems"  onclick="addRow()">add</button>
+        <button type = "button" onclick="deleteRow()">remove</button>
+<div class="table">
+        <table id="mainTable" cellspacing="0" cellpadding="10">
+
+        <tr>
+            <th>item</th>
+            <th>quantity</th>
+            <th>price</th>
+            <th>total</th>
+        </tr>
+
+        </table>
+    </div>
+    </div>
+ <script>
+     function addRow(){
+         const addRows = mainTable.rows.length;
+         const main = document.getElementById("mainTable").insertRow(addRows);
+         const row1 = main.insertCell();
+         const row2 = main.insertCell();
+         const row3 = main.insertCell();
+         const row4 = main.insertCell();
+     }
+     function deleteRow(){
+         document.getElementsByTagName("tr")[1].remove();   
+     }
+ </script>
+    
+</body>
+</html>
