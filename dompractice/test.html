@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        button{
+            padding: 10px 25px;
+            border-radius: 5px;
+            border: 1px solid;
+            color: white;
+            background-color: rgb(122, 209, 246);
+            margin-bottom: 20px;
+        }
+        .count{
+            height: 100px;
+            width: 100px;
+            background-color: beige;
+            display: block;
+            text-align: center;
+        }   
+        input{
+            width: 20px;
+        }
+        .main{
+            display: flex;
+        }
+        #two{
+            border: 1px solid;
+            width: 200px;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        #div-two{
+            border: 1px solid;
+            width: 180px;
+            height: 30px;
+        }
+        #box-div{
+            border: 1px solid black;
+            width: 18   0px;
+            height: 30px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="one">
+            <div class="button-div">
+                <button type="button" id="add" onclick="addDiv()">Add</button>
+            </div>
+            <div class="count">
+                <label for="">Box</label><hr>
+                <input type="text" name="count" id="count" value="0" />
+            </div>
+        </div>
+
+        <div id="two">
+            <div id="div-two">
+               <span id="span">No Box Inside</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addDiv(){
+            const div = document.getElementById("div-two");
+            const newDiv = document.createElement('div')
+            div.setAttribute('id',"box-div");
+
+            // document.getElementbyId('two').appendChild(div);
+
+
+            const button = document.createElement("button");
+            button.setAttribute('id',"button");
+            button.innerText = 'delete';
+            newDiv.append(button);
+            div.append(newDiv);
+
+            const countObj = document.getElementById('count');
+            let count = +countObj.value;
+            count++;
+            countObj.value = count;
+
+            
+
+
+        }
+    </script>
+
+
+    
+</body>
+</html>
