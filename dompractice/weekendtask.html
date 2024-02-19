@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weekendtask</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            background-color: rgb(223, 197, 247);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main {
+            margin-top: 40px;
+        }
+
+        .top {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .button-div {
+            margin-left: 10rem;
+        }
+
+        .button {
+            padding: 10px 25px;
+            border-radius: 5px;
+            border: 1px solid;
+            color: white;
+            background-color: rgb(122, 209, 246);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        #enterName {
+            padding: 10px;
+            margin-left: 5rem;
+            width: 100%;
+            border-radius: 10px;
+            border: none;
+
+        }
+
+        .down {
+            border: 1px solid;
+            width: 40vw;
+            height: 80vh;
+            padding: 3vh;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            margin-left: 5rem;
+            background-color: rgb(164, 164, 245);
+        }
+
+        li {
+            font-size: 1.5rem;
+            margin: 10px;
+
+        }
+
+        #button2 {
+            height: 3vh;
+            color: white;
+            background-color: rgb(228, 94, 94);
+            border: none;
+            font-weight: bold;
+            border-radius: 5px;
+            vertical-align: middle;
+            margin-left: 30px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <div class="top">
+                <div class="input-div">
+                    <input type="text" id="enterName" placeholder="enter text here">
+                </div>
+                <div class="button-div">
+                    <input type="button" class="button" name="addInput" id="addInput" value="ADD"
+                        onclick="add_inputData()" />
+                </div>
+            </div>
+            <div class="down">
+                <ul id="ul-list"></ul>
+                <span id="span">no text here</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        const input = document.getElementById("enterName").value;
+        const ul = document.getElementById("ul-list");
+        const span = document.getElementById("span");
+        const down = document.getElementById("down")
+        function add_inputData() {
+
+            if (enterName.value === '') {
+                alert("please enter text")
+            } else {
+                const li = document.createElement("li");
+                li.innerHTML = enterName.value;
+                const button = document.createElement('button');
+                button.setAttribute('id', "button2");
+                button.setAttribute('onclick', 'remove_inputData(this)');
+                button.innerText = 'Remove';
+                li.appendChild(button);
+                ul.appendChild(li);
+                span.remove();
+
+            }
+            enterName.value = '';
+        }
+
+        function remove_inputData(obj) {
+
+            obj.parentElement.remove();
+            if(ul.children.length === 0){
+            ul.append(span);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
